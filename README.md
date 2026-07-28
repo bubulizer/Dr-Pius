@@ -21,7 +21,7 @@ containing all four files.
 ## Publish with GitHub Pages
 
 Push this folder's contents to the `main` branch. The included workflow deploys
-the `docs` directory. In the repository's **Settings â†’ Pages**, select **GitHub
+the `docs` directory. In the repository's **Settings > Pages**, select **GitHub
 Actions** if Pages is not enabled automatically.
 
 Do not share the form edit URLs or response-spreadsheet URLs. Only the two published
