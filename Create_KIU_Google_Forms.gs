@@ -30,7 +30,7 @@ const SEAS_AUDIT = {
     },
     "Electrical, Telecommunications and Computer Engineering": {
       key: "etc",
-      coordinator: "rc.erc@kiu.ac.ug",
+      coordinator: "rc.etc@kiu.ac.ug",
       programmes: [
         "Power Systems Engineering",
         "Telecommunications Engineering",
