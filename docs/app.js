@@ -1,36 +1,35 @@
 (() => {
-  const config = window.KIU_AUDIT_FORMS || {};
-  const urls = { phd: config.phd || "", masters: config.masters || "" };
-  const notice = document.querySelector("#setup-notice");
-  let missing = false;
+  const settings = window.KIU_SEAS_AUDIT || {};
+  const formUrl = typeof settings.studentForm === "string" ? settings.studentForm.trim() : "";
+  const deadline = typeof settings.deadline === "string" ? settings.deadline.trim() : "";
+  const formLink = document.querySelector("#student-form-link");
+  const shareButton = document.querySelector("#share-link");
+  const setupNotice = document.querySelector("#setup-notice");
+  const deadlineText = document.querySelector("#deadline");
 
-  document.querySelectorAll(".form-link").forEach(link => {
-    const url = urls[link.dataset.form];
-    if (!url || !/^https:\/\/docs\.google\.com\/forms\//.test(url)) {
-      missing = true;
-      link.setAttribute("aria-disabled", "true");
-      link.addEventListener("click", event => event.preventDefault());
-      return;
-    }
-    link.href = url;
-    link.target = "_blank";
-    link.rel = "noopener";
+  if (deadline && deadlineText) deadlineText.textContent = deadline;
+
+  if (!/^https:\/\/docs\.google\.com\/forms\//i.test(formUrl)) {
+    setupNotice.hidden = false;
+    formLink.setAttribute("aria-disabled", "true");
+    formLink.removeAttribute("target");
+    shareButton.disabled = true;
+    return;
+  }
+
+  formLink.href = formUrl;
+  shareButton.addEventListener("click", () => {
+    const pageUrl = window.location.href.split("#")[0];
+    const message = [
+      "*KIU Western Campus - SEAS Postgraduate Students' Audit*",
+      "",
+      "All registered MSc and PhD students should complete the private audit and progress-monitoring form:",
+      pageUrl,
+      "",
+      "Do not post personal or academic information in this WhatsApp group.",
+      "",
+      "*Issued through the Associate Dean Research via the departmental Research Coordinator*"
+    ].join("\n");
+    window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   });
-
-  document.querySelectorAll(".share-link").forEach(button => {
-    const level = button.dataset.form;
-    const url = urls[level];
-    if (!url || !/^https:\/\/docs\.google\.com\/forms\//.test(url)) {
-      button.setAttribute("aria-disabled", "true");
-      button.disabled = true;
-      return;
-    }
-    button.addEventListener("click", () => {
-      const label = level === "phd" ? "PhD" : "Master's";
-      const text = `KIU Western Campus ${label} students' private audit form: ${url}`;
-      window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, "_blank", "noopener");
-    });
-  });
-
-  if (missing) notice.hidden = false;
 })();
