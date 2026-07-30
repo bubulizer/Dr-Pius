@@ -26,8 +26,11 @@ Student-submitted columns are protected. The public student form never displays 
 3. Replace the default code with `Create_KIU_Google_Forms.gs`.
 4. Run `createSeasPostgraduateAuditSystem`.
 5. Approve the requested Forms, Sheets, Drive, and trigger permissions.
-6. Copy the logged `CONFIG_JS` block into `docs/config.js`.
-7. Submit one test response for each department and verify the routing.
+6. Open the created form, select **Published** > **Manage responders**, and change
+   **Responder view** to **Anyone with the link**. This prevents students outside
+   the KIU Google domain from being forced to sign in.
+7. Copy the logged `CONFIG_JS` block into `docs/config.js`.
+8. Submit one test response for each department and verify the routing.
 
 Do not share form-edit, master-response, folder, or department-administration URLs publicly.
 Only the published student-form URL belongs in `docs/config.js`.
