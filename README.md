@@ -1,28 +1,33 @@
-# KIU Postgraduate Audit - GitHub Pages + Google Forms
+# KIU SEAS Postgraduate Audit
 
-This no-charge version uses:
+This package provides the no-charge deployment:
 
-- **GitHub Pages** for the public, WhatsApp-shareable landing page.
-- **Google Forms** for private PhD and master's submissions.
-- **Google Sheets** for responses visible only to the form owner's Google account.
+- GitHub Pages: public, mobile-friendly landing page and WhatsApp sharing.
+- Google Forms: one private student form with programme-level and department routing.
+- Google Sheets: a master response sheet owned by the Associate Dean Research.
+- Protected department workbooks: student responses plus administrator-only doctoral-committee columns.
 
-## Create the Google Forms
+## Ownership and access
 
-1. Open `https://script.google.com/` using the Google account that should own the forms.
-2. Create a **New project**.
+Run the deployment from `adresearch.seas@kiu.ac.ug`. The script gives department workbook access to:
+
+- Civil Engineering: `rc.civil@kiu.ac.ug`
+- Electrical, Telecommunications and Computer Engineering: `rc.erc@kiu.ac.ug`
+- Mechanical Engineering: `bubupius.e@kiu.ac.ug`
+- Biomedical Engineering: Associate Dean Research only until a coordinator email is added.
+
+Coordinators can edit the doctoral-committee administration columns in their department workbook.
+Student-submitted columns are protected. The public student form never displays doctoral-committee fields.
+
+## Create the revised form
+
+1. Sign into the Google account `adresearch.seas@kiu.ac.ug`.
+2. Open <https://script.google.com/> and create a project.
 3. Replace the default code with `Create_KIU_Google_Forms.gs`.
-4. Run `createKiuPostgraduateAuditForms`.
-5. Review and approve Google's requested Forms, Sheets, and Drive permissions.
-6. Copy the `CONFIG_JS` block from the execution log into `docs/config.js`.
+4. Run `createSeasPostgraduateAuditSystem`.
+5. Approve the requested Forms, Sheets, Drive, and trigger permissions.
+6. Copy the logged `CONFIG_JS` block into `docs/config.js`.
+7. Submit one test response for each department and verify the routing.
 
-The script creates two forms, two linked response spreadsheets, and a Drive folder
-containing all four files.
-
-## Publish with GitHub Pages
-
-Push this folder's contents to the `main` branch. The included workflow deploys
-the `docs` directory. In the repository's **Settings > Pages**, select **GitHub
-Actions** if Pages is not enabled automatically.
-
-Do not share the form edit URLs or response-spreadsheet URLs. Only the two published
-form URLs belong in `docs/config.js` and WhatsApp messages.
+Do not share form-edit, master-response, folder, or department-administration URLs publicly.
+Only the published student-form URL belongs in `docs/config.js`.
