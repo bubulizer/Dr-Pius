@@ -12,7 +12,7 @@ This package provides the no-charge deployment:
 Run the deployment from `adresearch.seas@kiu.ac.ug`. The script gives department workbook access to:
 
 - Civil Engineering: `rc.civil@kiu.ac.ug`
-- Electrical, Telecommunications and Computer Engineering: `rc.erc@kiu.ac.ug`
+- Electrical, Telecommunications and Computer Engineering: `rc.etc@kiu.ac.ug`
 - Mechanical Engineering: `bubupius.e@kiu.ac.ug`
 - Biomedical Engineering: Associate Dean Research only until a coordinator email is added.
 
