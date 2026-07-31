@@ -193,7 +193,6 @@ function createStudentAuditForm_(folder) {
   addChoice_(form, "Sex", ["Female", "Male", "Prefer not to say", "Other"], true);
   addText_(form, "Telephone / WhatsApp Number", true, "Include country code where applicable");
   addText_(form, "Email Address", true);
-  addText_(form, "School / Faculty", true, "School of Engineering and Applied Sciences");
   addList_(form, "PG Programme Level", ["MSc", "PhD"], true);
 
   const departmentItem = form.addMultipleChoiceItem()
