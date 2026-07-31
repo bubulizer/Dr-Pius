@@ -411,7 +411,7 @@ function routeAuditSubmissionToDepartment_(event) {
     "Other Current Academic Stage": responseMap["Other Current Academic Stage"],
     "Date Current Stage Began": responseMap["Date Current Stage Began"],
     "Expected Date of Completing Current Stage": responseMap["Expected Date of Completing Current Stage"],
-    "Principal / Sole Supervisor": responseMap["Principal / Sole Supervisor"],
+    "Principal / Main Supervisor": responseMap["Principal / Main Supervisor"],
     "Co-supervisor 1": responseMap["Co-supervisor 1"],
     "Co-supervisor 2": responseMap["Co-supervisor 2"],
     "Co-supervisor 3": responseMap["Co-supervisor 3"],
