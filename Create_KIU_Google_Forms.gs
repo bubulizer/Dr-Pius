@@ -22,9 +22,9 @@ const SEAS_AUDIT = {
         "Geotechnical Engineering",
         "Construction Management",
         "Environmental Engineering",
-        "Water Engineering",
+        "Water Resources Engineering",
         "Structural Engineering",
-        "Transport Engineering",
+        "Transportation Engineering",
         "Other approved Civil Engineering specialisation"
       ]
     },
@@ -400,7 +400,6 @@ function routeAuditSubmissionToDepartment_(event) {
     "Sex": responseMap["Sex"],
     "Telephone / WhatsApp Number": responseMap["Telephone / WhatsApp Number"],
     "Email Address": responseMap["Email Address"],
-    "School / Faculty": responseMap["School / Faculty"],
     "PG Programme Level": responseMap["PG Programme Level"],
     "Department": department,
     "Programme / Specialisation": specialisation,
