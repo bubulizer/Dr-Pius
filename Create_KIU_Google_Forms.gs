@@ -67,7 +67,6 @@ const STUDENT_EXPORT_HEADERS = [
   "Sex",
   "Telephone / WhatsApp Number",
   "Email Address",
-  "School / Faculty",
   "PG Programme Level",
   "Department",
   "Programme / Specialisation",
@@ -81,7 +80,7 @@ const STUDENT_EXPORT_HEADERS = [
   "Other Current Academic Stage",
   "Date Current Stage Began",
   "Expected Date of Completing Current Stage",
-  "Principal / Sole Supervisor",
+  "Principal / Main Supervisor",
   "Co-supervisor 1",
   "Co-supervisor 2",
   "Co-supervisor 3",
@@ -260,7 +259,7 @@ function createStudentAuditForm_(folder) {
 
   addSection_(form, "3. Supervision",
     "Provide the names of your current appointed supervisors.");
-  addText_(form, "Principal / Sole Supervisor", true);
+  addText_(form, "Principal / Main Supervisor", true);
   addText_(form, "Co-supervisor 1", false, "Leave blank if not applicable");
   addText_(form, "Co-supervisor 2", false, "Leave blank if not applicable");
   addText_(form, "Co-supervisor 3", false, "Leave blank if not applicable");
